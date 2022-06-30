@@ -1,10 +1,18 @@
 <h1>{{ title }}</h1>
 
 <ul>
-  <li **ngFor="let item of listaTarefas">
-    {{ item.id }} {{ item.descricao }}
+  <li *ngFor="let item of listaTarefas">
+    {{ item.id }} - {{ item.descricao }}
     <button *ngIf="!item.done" (click)="markAsDone(item)">Concluir</button>
     <button *ngIf="item.done" (click)="markAsUndone(item)">Refazer</button>
     <button (click)="remove(item)">Remover</button>
    </li>
 </ul>
+
+<form [formGroup]="form">
+  <fieldset>
+    <label>Tarefa:</label>
+    <input type="text">
+    <button>Adicionar</button>
+  </fieldset>
+</form>
