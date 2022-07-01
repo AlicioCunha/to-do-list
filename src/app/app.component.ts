@@ -21,6 +21,7 @@ export class AppComponent {
       ])]
     });
 
+    this.load();
   }
 
 
@@ -31,15 +32,18 @@ export class AppComponent {
     if(indexTask !== -1){
       this.listaTarefas.splice(indexTask, 1);
     }
+    this.save();
     
   }
 
   markAsDone(item: Task) {
     item.done = true;
+    this.save();
   }
 
   markAsUndone(item: Task) {
     item.done = false; 
+    this.save();
   }
 
   addTask(){
@@ -59,5 +63,10 @@ export class AppComponent {
   save(){
     const data = JSON.stringify(this.listaTarefas);
     localStorage.setItem('tasks', data);
+  }
+
+  load(){
+    const data = localStorage.getItem('tasks');
+    this.listaTarefas = JSON.parse(data);
   }
 }
