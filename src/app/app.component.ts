@@ -21,10 +21,6 @@ export class AppComponent {
       ])]
     });
 
-
-    this.listaTarefas.push(new Task(1, 'Ir ao mercado', false));
-    this.listaTarefas.push(new Task(2, 'Cortar o cabelo', false));
-    this.listaTarefas.push(new Task(3, 'Ir ao posto', false));
   }
 
 
@@ -50,5 +46,11 @@ export class AppComponent {
     const descricaoNovaTarefa = this.form.controls['descricao'].value;
     const id = this.listaTarefas.length + 1;
     this.listaTarefas.push(new Task(id, descricaoNovaTarefa, false));
+   
+    this.clear();
+  }
+
+  clear(){
+    this.form.reset();
   }
 }
