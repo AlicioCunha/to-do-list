@@ -46,11 +46,18 @@ export class AppComponent {
     const descricaoNovaTarefa = this.form.controls['descricao'].value;
     const id = this.listaTarefas.length + 1;
     this.listaTarefas.push(new Task(id, descricaoNovaTarefa, false));
+
+    this.save();
    
     this.clear();
   }
 
   clear(){
     this.form.reset();
+  }
+
+  save(){
+    const data = JSON.stringify(this.listaTarefas);
+    localStorage.setItem('tasks', data);
   }
 }
