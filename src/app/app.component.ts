@@ -4,8 +4,7 @@ import { Task } from './model/task';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   public title: String = 'Lista de tarefas';
@@ -30,6 +29,12 @@ export class AppComponent {
 
 
   remove(item: Task) {
+
+    const indexTask = this.listaTarefas.indexOf(item);
+
+    if(indexTask !== -1){
+      this.listaTarefas.splice(indexTask, 1);
+    }
     
   }
 
