@@ -12,7 +12,10 @@
 <form [formGroup]="form">
   <fieldset>
     <label>Tarefa:</label>
-    <input type="text">
+    <input type="text"
+      placeholder="descricao da tarefa"
+      maxlength="50"
+      formControlName="decricao">
     <button>Adicionar</button>
   </fieldset>
 </form>
