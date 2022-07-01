@@ -15,7 +15,13 @@
     <input type="text"
       placeholder="descricao da tarefa"
       maxlength="50"
-      formControlName="decricao">
+      formControlName="descricao">
+
+      <small 
+        *ngIf="form.controls.descricao.invalid && 
+               !form.controls.descricao.pristine"
+        >a descricao tem que ter entre 3 e 50 caracteres</small>
+
     <button>Adicionar</button>
   </fieldset>
 </form>
