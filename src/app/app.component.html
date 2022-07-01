@@ -1,6 +1,7 @@
 <h1>{{ title }}</h1>
 
 <ul>
+  <p *ngIf="listaTarefas.length==0"><small>Nenhuma tarefa cadastrada</small></p>
   <li *ngFor="let item of listaTarefas">
     {{ item.id }} - {{ item.descricao }}
     <button *ngIf="!item.done" (click)="markAsDone(item)">Concluir</button>
