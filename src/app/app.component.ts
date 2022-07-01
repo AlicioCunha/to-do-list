@@ -39,10 +39,10 @@ export class AppComponent {
   }
 
   markAsDone(item: Task) {
-    
+    item.done = true;
   }
 
   markAsUndone(item: Task) {
-    
+    item.done = false; 
   }
 }
