@@ -22,6 +22,6 @@
                !form.controls.descricao.pristine"
         >a descricao tem que ter entre 3 e 50 caracteres</small>
 
-    <button>Adicionar</button>
+    <button (click)="addTask()" [disabled]="form.invalid">Adicionar</button>
   </fieldset>
 </form>

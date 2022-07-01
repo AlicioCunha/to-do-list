@@ -45,4 +45,10 @@ export class AppComponent {
   markAsUndone(item: Task) {
     item.done = false; 
   }
+
+  addTask(){
+    const descricaoNovaTarefa = this.form.controls['descricao'].value;
+    const id = this.listaTarefas.length + 1;
+    this.listaTarefas.push(new Task(id, descricaoNovaTarefa, false));
+  }
 }
